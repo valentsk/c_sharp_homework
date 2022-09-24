@@ -1,4 +1,4 @@
-﻿// Напишите программу, которая принимает на вход число (N) и выдаёт таблицу кубов чисел от 1 до N.
+﻿// 23 Напишите программу, которая принимает на вход число (N) и выдаёт таблицу кубов чисел от 1 до N.
 // 3 -> 1, 8, 27
 // 5 -> 1, 8, 27, 64, 125
 
@@ -34,13 +34,13 @@ void cubeNumberWhile(int number)
     Console.WriteLine();
 }
 
-int x = -1;
+int number = -1;
 while (true)
 {
     try
     {
         Console.Write("Введите число: ");
-        x = Math.Abs(int.Parse(Console.ReadLine()!));
+        number = Math.Abs(int.Parse(Console.ReadLine()!));
         break;
     }
     catch
@@ -49,5 +49,5 @@ while (true)
     }
 }
 
-cubeNumberFor(x);
-cubeNumberWhile(x);
+cubeNumberFor(number);
+cubeNumberWhile(number);
