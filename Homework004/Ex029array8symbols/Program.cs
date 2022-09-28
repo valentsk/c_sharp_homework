@@ -5,3 +5,41 @@
 // - Должна быть отдельная функция, которая создаёт массив и отдельная функция вывода
 // - Внутри функций (кроме функции вывода) НЕЛЬЗЯ использовать класс Console. Только в основном блоке кода или в функции вывода
 
+
+int[] MakeArray()
+{
+    int length = 8;
+    int[] array = new int[length];
+    return array;
+}
+
+void FillArray(int[] array)
+{
+    Random randGenerator = new Random();
+    for (int i = 0; i < array.Length; i++)
+    {
+        array[i] = randGenerator.Next();
+    }
+}
+
+void PrintArray(int[] array)
+{
+    Console.Write("[");
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (i < array.Length - 1)
+        {
+            Console.Write($"{array[i]}, ");
+        }
+        else
+        {
+            Console.Write($"{array[i]}]");
+        }
+    }
+}
+
+Console.Clear();
+
+int[] array = MakeArray();
+FillArray(array);
+PrintArray(array);
