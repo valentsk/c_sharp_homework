@@ -6,8 +6,20 @@
 // - Должна быть отдельная функция, которая возвразает результат суммы цифр
 // - Внутри функций НЕЛЬЗЯ использовать класс Console. Только в основном блоке кода
 
+int SumDigits(int number)
+{
+    int result = 0;
+    while (number > 0)
+    {
+        result += number % 10;
+        number /= 10;
+    }
+    return result;
+}
 
-
+Console.Clear();
 
 Console.Write("Введите число: ");
-int number = int.Parse(Console.ReadLine()!);
+int number = Math.Abs(int.Parse(Console.ReadLine()!));
+
+Console.WriteLine($"Сумма цифр в числе {number} равна {SumDigits(number)}");
