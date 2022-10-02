@@ -16,7 +16,7 @@ void FillArray(int[] array)
     Random randGenerator = new Random();
     for (int i = 0; i < array.Length; i++)
     {
-        array[i] = randGenerator.Next(0, 9);
+        array[i] = randGenerator.Next(-99, 100);
     }
 }
 
