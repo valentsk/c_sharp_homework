@@ -4,9 +4,11 @@
 // 1 -3,3 8 -9,9
 // 8 7,8 -7,1 9
 
+Console.Clear();
 double[,] array = new double[3, 4];
 FillArray(array);
 PrintArray(array);
+
 
 void PrintArray(double[,] array)
 {
