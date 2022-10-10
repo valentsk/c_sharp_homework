@@ -2,8 +2,7 @@
 
 Console.Write("Введите N: ");
 int number = int.Parse(Console.ReadLine()!);
-int numberZero = 0;
-int numberOne = 1;
+
 
 int[] array = new int[number + 1];
 array[0] = 0;
@@ -14,25 +13,27 @@ for (int i = number; i > 1; i--)
     number -= 1;
 }
 
-void PrintArray(int[] array)
-{
-    Console.Write("Массив: ");
-    for (int i = 0; i < array.Length; i++)
-    {
-        Console.Write($"{array[i]} ");
-    }
-}
+// void PrintArray(int[] array)
+// {
+//     Console.Write("Массив: ");
+//     for (int i = 0; i < array.Length; i++)
+//     {
+//         Console.Write($"{array[i]} ");
+//     }
+// }
+// PrintArray(array);
 
-PrintArray(array);
-FibArray(array);
+
+    Console.Write("Фибо: 0 1 ");
+    FibArray(array);
+
 
 void FibArray(int[] array)
 {
-    Console.Write("Фибо: ");
     int res = array[0] + array[1];
     for (int i = 2; i < array.Length - 1; i++)
     {
-        res += array[i];
-        Console.Write($"{res} ");
+        array[i] = array[i - 2] + array[i - 1] ;
+        Console.Write($"{array[i]} ");
     }
 }
