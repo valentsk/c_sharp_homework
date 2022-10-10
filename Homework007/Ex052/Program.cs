@@ -31,23 +31,26 @@ void PrintArray(int[,] array)
 
 void FillArray(int[,] array)
 {
-     Random generator = new Random();
-   for (int i = 0; i < array.GetLength(0); i++)
+    Random generator = new Random();
+    for (int i = 0; i < array.GetLength(0); i++)
     {
         for (int j = 0; j < array.GetLength(1); j++)
         {
-            array[i, j] = generator.Next(-9,10);
+            array[i, j] = generator.Next(0, 10);
         }
     }
 }
 
 void AvarageArray(int[,] array)
 {
-    for (int i = 0; i < array.GetLength(0); i += 2)
+    for (int i = 0; i < array.GetLength(0); i += 1)
     {
-        for (int j = 0; j < array.GetLength(1); j += 2)
+        double sum = 0;
+        for (int j = 0; j < array.GetLength(1); j += 1)
         {
-            array[i,j] = array[i,j] * array[i,j];
+            sum += array[i, j];
         }
+        double avarage = Math.Round(sum / array.GetLength(1), 1);
+        Console.WriteLine($"Среднее арифметическое {i} столбца: {avarage}");
     }
 }
