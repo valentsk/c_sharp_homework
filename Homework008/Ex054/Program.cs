@@ -9,6 +9,7 @@
 // 9 5 3 2
 // 8 4 4 2
 
+Console.Clear();
 
 Console.Write("Введите m: ");
 int m = int.Parse(Console.ReadLine()!);
