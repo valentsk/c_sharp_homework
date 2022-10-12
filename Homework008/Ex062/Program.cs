@@ -25,30 +25,43 @@ void PrintArray(int[,] array)
 
 void FillArray(int[,] array)
 {
-    Random generator = new Random();
-    for (int i = 0; i < array.GetLength(0); i++)
+    int number = 1;
+
+    for (int j = 0; j < array.GetLength(1); j++)
     {
-        for (int j = 0; j < array.GetLength(1); j++)
-        {
-            array[i, j] = generator.Next(1, 10);
-        }
+        array[0, j] += number;
+        number++;
     }
+
+    for (int i = 1; i < array.GetLength(0); i++)
+    {
+        array[i, array.GetLength(1) - 1] += number;
+        number++;
+    }
+
+    for (int j = array.GetLength(1) - 2; j >= 0; j--)
+    {
+        array[array.GetLength(0) - 1, j] += number;
+        number++;
+    }
+
+    for (int i = array.GetLength(0) - 2; i > 0; i--)
+    {
+        array[i, 0] += number;
+        number++;
+    }
+
+    for (int j = 1; j < array.GetLength(1) - 1; j++)
+    {
+        array[1, j] += number;
+        number++;
+    }
+
+    array[2,2] += number;
+    number++;
+
+    array[2,1]+= number;
+    number++;
 }
 
 
-int[,] ProductMatrix(int[,] arrayOne, int[,] arrayTwo)
-{
-    int[,] arrayProduct = new int[arrayOne.GetLength(0), arrayTwo.GetLength(1)];
-
-    for (int i = 0; i < arrayProduct.GetLength(0); i++)
-    {
-        for (int j = 0; j < arrayProduct.GetLength(1); j++)
-        {
-            for (int k = 0; k < arrayOne.GetLength(0); k++)
-            {
-                arrayProduct[i, j] += arrayOne[i, k] * arrayTwo[k, j];
-            }
-        }
-    }
-    return arrayProduct;
-}
