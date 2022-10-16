@@ -32,3 +32,4 @@ Console.Write("Введите число: ");
 int number = int.Parse(Console.ReadLine()!);
 string str = TranslateDexToBin(number);
 Console.WriteLine($"В двоичном: {StringToReverseString(str)}");
+

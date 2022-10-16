@@ -11,7 +11,7 @@ void PrintArray(int[] array)
     }
 }
 
-(int, int, int) LongDigits(int[] array)
+(int, int, int) LongDigits(int[] array) // чтобы не делать 3 функции
 {
     int countMax = 1; // счетчик для запоминания максимального из всех последовательностей
     int countNow = 1; // счетчик для запоминания длины текущей последовательности
